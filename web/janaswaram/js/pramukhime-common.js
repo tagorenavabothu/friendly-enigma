@@ -45,11 +45,11 @@ lang_divs ={
 }
 
 var tips = [], currenttip = 0, turnoff = false, piresourcebase='';
-// Callback function which gets called when user presses F9 key.
+// Callback function which gets called when user presses F9 key --.
 function scriptChangeCallback(lang, kb, context) {
 
     
-    alert(lang);
+    alert("check : "+lang);
     alert(lang_divs);
     
     // Change the dropdown to new selected language.
