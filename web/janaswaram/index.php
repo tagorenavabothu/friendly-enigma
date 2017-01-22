@@ -348,13 +348,14 @@ function googleTranslateElementInit() {
 </div>
  <div class="row">
           <div class="col-md-12">
-            <p class="pull-right">preferred language :</p> <select id="drpLanguage"
+             <select id="drpLanguage"
             onchange="javascript:changeLanguage(this.options[this.selectedIndex].value);updatelabels(this.options[this.selectedIndex].value)" 
             name="drpLanguage" title="Choose Language" class="big pull-right">
             <option value='pramukhindic:telugu'>Telugu</option>
             <option value=":english" selected="selected">English</option>
             <option value='pramukhindic:hindi'>Hindi</option>
         </select>
+        <p class="pull-right">preferred language :</p>
         <ul id="toolbar">
                     <li><a href="javascript:;" onclick="showHelp(this);" id="cmdhelp" title="Typing help"></a></li>
                 </ul>
