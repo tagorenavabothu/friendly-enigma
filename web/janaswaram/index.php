@@ -560,6 +560,11 @@ else
             var elem = document.getElementById('dialog');
             elem.style.top = ((y - 550) / 2) + 'px';
             elem.style.left = ((x - 700) / 2) + 'px';
+
+
+            $("#goog-te-combo").onchange(funtion(){
+              alert("hi");
+            });
             
     </script>
 </html>
