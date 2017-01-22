@@ -142,9 +142,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
                 if ($err) {
-                   // echo "cURL Error #:" . $err;
+                   echo "cURL Error #:" . $err;
                 }else{
-                	//echo "<br>echo1".$response;
+                	echo "<br>echo1".$response;
                 }
 
                 
@@ -183,9 +183,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             curl_close($curl);
 
             if ($err) {
-                //echo "cURL Error #:" . $err;
+                echo "cURL Error #:" . $err;
             }else{
-            	//echo "<br>echo 2".$response;
+            	echo "<br>echo 2".$response;
             }
         
         
@@ -196,6 +196,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header('Location: success.php');
             exit;
         }else{
+          echo "Error in sending email";
          echo '<script type="text/javascript">$(".loader").hide()</script>';
         }
         
@@ -357,7 +358,7 @@ function googleTranslateElementInit() {
                 </ul>
           </div>
         </div>
-        
+
             <br><br>
         <form method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="return validateform();">
                 
