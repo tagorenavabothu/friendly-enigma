@@ -568,8 +568,6 @@ else
             elem.style.left = ((x - 700) / 2) + 'px';
 
 
-            var updatelabels= function(lng){
-                alert("test"+lng);
-            }
+           
     </script>
 </html>
