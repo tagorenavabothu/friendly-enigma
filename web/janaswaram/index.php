@@ -345,7 +345,7 @@ function googleTranslateElementInit() {
 </div>
  <div class="row">
           <div class="col-md-12">
-            preferred language : <select id="drpLanguage"
+            <p class="pull-right">preferred language :</p> <select id="drpLanguage"
             onchange="javascript:changeLanguage(this.options[this.selectedIndex].value);changeLanguage(this.options[this.selectedIndex].value)" 
             name="drpLanguage" title="Choose Language" class="big pull-right">
             <option value='pramukhindic:telugu'>Telugu</option>
