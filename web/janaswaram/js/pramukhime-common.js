@@ -43,7 +43,7 @@ function scriptChangeCallback(lang, kb, context) {
         }
     }
     // Change the image
-    document.getElementById('pramukhimecharmap').src = piresourcebase + 'img/' + pramukhIME.getHelpImage();
+   // document.getElementById('pramukhimecharmap').src = piresourcebase + 'img/' + pramukhIME.getHelpImage();
     var filename = pramukhIME.getHelp();
     if (filename != '') {
         document.getElementById('pramukhimehelpdetailed').src = piresourcebase + 'help/' + filename;
