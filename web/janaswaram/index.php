@@ -83,8 +83,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail_us->AddReplyTo( $email, $name );
         
         $mail_us->Sender = $email;
-       $mail_us->addAddress('janaswaram@janasenaparty.org','Janasena Party');
-       // $mail_us->addAddress('tech@janasenaparty.org','Janasena Party');
+       //$mail_us->addAddress('janaswaram@janasenaparty.org','Janasena Party');
+        $mail_us->addAddress('tagore090574@gmail.com','Janasena Party');
         
         $mail_us->Subject = $policy;
         //$mail_us->Body = html_entity_decode($name."<br>".$email."<br>".$phoneno."<br>".$Profession."<br>".$policy."<br>".$suggestion);
