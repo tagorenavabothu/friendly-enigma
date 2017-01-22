@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail1->SMTPAuth = true; // authentication enabled
         $mail1->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for Gmail
         $mail1->Host = "smtp.gmail.com";
-        $mail1->Port = 465; // or 587
+        $mail1->Port = 587; // or 587
         $mail1->IsHTML(true);
         $mail1->Username = "tech@janasenaparty.org";
         $mail1->Password = "donaldshimoda";
