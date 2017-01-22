@@ -562,7 +562,7 @@ else
             elem.style.left = ((x - 700) / 2) + 'px';
 
 
-            $(".goog-te-combo").change(funtion(){
+            $(".goog-te-combo").change(function(){
               alert("hi");
 
               $(".goog-te-combo :selected").text();
