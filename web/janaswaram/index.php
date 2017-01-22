@@ -532,7 +532,7 @@ else
       pramukhIME.onLanguageChange(scriptChangeCallback);
       var lang = (getCookie('pramukhime_language',':english')).split(':');
       pramukhIME.setLanguage(lang[1], lang[0]);
-      var ul = document.getElementById('pi_tips');
+     // var ul = document.getElementById('pi_tips');
 
       var elem, len = ul.childNodes.length, i;
       for (i = 0; i < len; i++) {
@@ -544,10 +544,10 @@ else
       for (i = len - 1; i > 1; i--) {
           ul.removeChild(ul.childNodes[i]);
       }
-      ul.childNodes[i].className = 'tip'; // replace small tip text with large
+     // ul.childNodes[i].className = 'tip'; // replace small tip text with large
 
-      showNextTip(); // call for first time
-      setTimeout('turnOffTip()', 90000); // show tips for 1.5 minutes
+      //showNextTip(); // call for first time
+     // setTimeout('turnOffTip()', 90000); // show tips for 1.5 minutes
             document.getElementById('suggestion').focus();
             document.getElementById('name').focus();
             //document.getElementById('Profession').focus();
