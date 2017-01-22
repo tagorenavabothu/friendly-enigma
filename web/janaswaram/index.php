@@ -320,7 +320,7 @@ body {
        <img src="img/Layer45.png" style="width:100%" />
         </div>
 
-
+<!-- 
         <div class="row">
           <div class="col-md-12">
             <div id="google_translate_element"></div><script type="text/javascript">
@@ -330,7 +330,7 @@ function googleTranslateElementInit() {
 </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
           </div>
 
-        </div>
+        </div> -->
 
         <div class="row">
           <div class="col-md-12">
@@ -560,13 +560,6 @@ else
             var elem = document.getElementById('dialog');
             elem.style.top = ((y - 550) / 2) + 'px';
             elem.style.left = ((x - 700) / 2) + 'px';
-
-
-            $(".goog-te-combo").change(function(){
-              alert("hi");
-
-              $(".goog-te-combo :selected").text();
-            });
             
     </script>
 </html>
