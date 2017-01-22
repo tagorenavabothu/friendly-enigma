@@ -533,9 +533,9 @@ else
       setTimeout('turnOffTip()', 90000); // show tips for 1.5 minutes
             document.getElementById('suggestion').focus();
             document.getElementById('name').focus();
-            document.getElementById('Profession').focus();
-            document.getElementById('email').focus();
-            document.getElementById('phone').focus();
+            //document.getElementById('Profession').focus();
+            //document.getElementById('email').focus();
+            //document.getElementById('phone').focus();
             document.getElementById('phone').focus();
 
 
