@@ -1,8 +1,5 @@
 <?php
 //namespace MicrosoftAzure\Storage\Common;
-
-phpinfo();
-
 require 'PHPMailer/PHPMailerAutoload.php';
 
 ini_set("SMTP", "aspmx.l.google.com");
