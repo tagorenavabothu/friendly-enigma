@@ -192,13 +192,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          $response1 = $mail->send();
         $response2 = $mail_us->send();
 
-        print_r($response1);
-        print_r($response2);
+       
         
         if($response1 && $response2){
             header('Location: success.php');
             exit;
         }else{
+
+           print_r($response1);
+        print_r($response2);
+
+         echo "Response 1".$response1;
+        echo "Response 2".$response2;
           echo "Error in sending email";
          echo '<script type="text/javascript">$(".loader").hide()</script>';
         }
