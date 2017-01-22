@@ -51,7 +51,7 @@ function scriptChangeCallback(lang, kb, context) {
     
     alert(lang);
     alert(lang_divs);
-    console.log(lang_divs);
+    
     // Change the dropdown to new selected language.
     document.getElementById('cmdhelp').className = (lang == 'english' ? 'disabled' : '');
 
