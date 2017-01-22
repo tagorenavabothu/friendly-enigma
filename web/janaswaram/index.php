@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail1->IsSMTP(); // enable SMTP
         $mail1->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
         $mail1->SMTPAuth = true; // authentication enabled
-        $mail1->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+        $mail1->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for Gmail
         $mail1->Host = "smtp.gmail.com";
         $mail1->Port = 465; // or 587
         $mail1->IsHTML(true);
