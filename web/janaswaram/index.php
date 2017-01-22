@@ -378,7 +378,7 @@ function googleTranslateElementInit() {
                     <option value="Academician">Academician</option>
                     <option value="Student">Student</option>
                     <option value="Self-employed">Self-employed</option>
-                    <option value="house wife">house wife</option>
+                    <option value="house wife">house-wife</option>
                     <option value="Journalist">Journalist</option>
                     <option value="other">other</option>
                 </select>
