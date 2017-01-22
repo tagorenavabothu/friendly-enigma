@@ -332,9 +332,19 @@ function googleTranslateElementInit() {
 
         </div> -->
 
-        <div class="row">
+       
+         <div class="row" style="background: #d81615;color:#fff;">
+             <div class="col-md-12">
+                    <h4 style="text-align: center"><b>Janasena Party stands for strengthening and empowering civil society.</b></h4>
+                  <h4 style="text-align: center"><b>Introducing Janaswaram, a platform for public participation in policy making.</b></h4>
+                <h4 style="text-align: center">People with insightful ideas, opinions and suggestions will get a chance to participate in emerging leadership programs & policy workshops.</h4>
+                
+             </div>
+       
+
+</div>
+ <div class="row">
           <div class="col-md-12">
-          <label for="Profession" class=" control-label">Profession <span class="error-text"><?php echo " * ".$proffessionErr;?></span></label><br>
             <select id="drpLanguage"
             onchange="javascript:changeLanguage(this.options[this.selectedIndex].value);changeLanguage(this.options[this.selectedIndex].value)" 
             name="drpLanguage" title="Choose Language" class="big from-control">
@@ -348,16 +358,6 @@ function googleTranslateElementInit() {
           </div>
         </div>
         
-         <div class="row" style="background: #d81615;color:#fff;">
-             <div class="col-md-12">
-                    <h4 style="text-align: center"><b>Janasena Party stands for strengthening and empowering civil society.</b></h4>
-                  <h4 style="text-align: center"><b>Introducing Janaswaram, a platform for public participation in policy making.</b></h4>
-                <h4 style="text-align: center">People with insightful ideas, opinions and suggestions will get a chance to participate in emerging leadership programs & policy workshops.</h4>
-                
-             </div>
-       
-
-</div>
             <br><br>
         <form method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="return validateform();">
                 
