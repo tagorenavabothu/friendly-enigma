@@ -562,8 +562,10 @@ else
             elem.style.left = ((x - 700) / 2) + 'px';
 
 
-            $("#goog-te-combo").onchange(funtion(){
+            $(".goog-te-combo").change(funtion(){
               alert("hi");
+
+              $(".goog-te-combo :selected").text();
             });
             
     </script>
