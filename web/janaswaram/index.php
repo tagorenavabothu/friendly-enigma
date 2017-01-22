@@ -536,7 +536,7 @@ else
             //document.getElementById('Profession').focus();
             //document.getElementById('email').focus();
             //document.getElementById('phone').focus();
-            document.getElementById('phone').focus();
+            //document.getElementById('phone').focus();
 
 
 
