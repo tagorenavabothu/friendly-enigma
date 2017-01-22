@@ -569,7 +569,7 @@ else
 
 
             var updatelabels= function(lng){
-                alert(lng);
+                alert("test"+lng);
             }
     </script>
 </html>
