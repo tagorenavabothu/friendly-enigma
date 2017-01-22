@@ -29,6 +29,8 @@ function addOption(elemid, text, value, selected) {
 var tips = [], currenttip = 0, turnoff = false, piresourcebase='';
 // Callback function which gets called when user presses F9 key.
 function scriptChangeCallback(lang, kb, context) {
+
+    alert(lang);
     // Change the dropdown to new selected language.
     document.getElementById('cmdhelp').className = (lang == 'english' ? 'disabled' : '');
 
@@ -44,14 +46,14 @@ function scriptChangeCallback(lang, kb, context) {
     }
     // Change the image
    // document.getElementById('pramukhimecharmap').src = piresourcebase + 'img/' + pramukhIME.getHelpImage();
-    var filename = pramukhIME.getHelp();
+    /*var filename = pramukhIME.getHelp();
     if (filename != '') {
         document.getElementById('pramukhimehelpdetailed').src = piresourcebase + 'help/' + filename;
     }
-    setCookie('pramukhime_language', kb + ':' + lang, 10);
+    setCookie('pramukhime_language', kb + ':' + lang, 10);*/
 
 
-    alert(lang);
+
 
 }
 // Changing the language by selecting from dropdown list
