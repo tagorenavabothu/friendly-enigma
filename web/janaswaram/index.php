@@ -388,7 +388,7 @@ function googleTranslateElementInit() {
 	   <div class="row">
 		  <div class="col-md-6 col-sm-6">
               <div class="form-group">
-                <label for="email">Email Address <span class="error-text"><?php echo " * ".$emailErr;?></span></label>
+                <label for="email">Email <span class="error-text"><?php echo " * ".$emailErr;?></span></label>
                 <input type="email" name="email" class="form-control" id="email" required>
               </div>
 		  </div>
