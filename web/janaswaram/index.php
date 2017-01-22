@@ -348,6 +348,19 @@ function googleTranslateElementInit() {
 </div>
  <div class="row">
           <div class="col-md-12">
+
+            <div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+ new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,hi,te'}, 'google_translate_element');
+}
+
+window.setInterval(function(){
+     var lang = $(".goog-te-menu-value span:first").text();
+     alert(lang);
+},5000);
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
              <select id="drpLanguage"
             onchange="javascript:changeLanguage(this.options[this.selectedIndex].value);)" 
             name="drpLanguage" title="Choose Language" class="big pull-right">
