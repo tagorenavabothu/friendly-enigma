@@ -526,8 +526,10 @@ else
 <script language="javascript" type="text/javascript">
         pramukhIME.addLanguage(PramukhIndic);
 
-      pramukhIME.enable();
-      pramukhIME.disable(document.getElementById('phoneno'))
+      pramukhIME.enable('suggestion');
+      pramukhIME.enable('name');
+
+      //pramukhIME.disable(document.getElementById('phoneno'))
       pramukhIME.onLanguageChange(scriptChangeCallback);
       var lang = (getCookie('pramukhime_language',':english')).split(':');
       pramukhIME.setLanguage(lang[1], lang[0]);
