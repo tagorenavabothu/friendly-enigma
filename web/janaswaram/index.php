@@ -1,5 +1,8 @@
 <?php
 //namespace MicrosoftAzure\Storage\Common;
+
+
+
 require 'PHPMailer/PHPMailerAutoload.php';
 
 
@@ -72,30 +75,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $mail = new PHPMailer;
         $mail_us = new PHPMailer;
-
-        $mail1 = new PHPMailer;
         
         //------sends email to our email with the inforamtion sent by user ---
-
-        $mail1->IsSMTP(); // enable SMTP
-        $mail1->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
-        $mail1->SMTPAuth = true; // authentication enabled
-        $mail1->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for Gmail
-        $mail1->Host = "tls://smtp.gmail.com";
-        $mail1->Port = 587; // or 587
-        $mail1->IsHTML(true);
-        $mail1->Username = "tech@janasenaparty.org";
-        $mail1->Password = "donaldshimoda";
-        $mail1->SetFrom("tech@janasenaparty.org");
-        $mail1->Subject = "Test";
-        $mail1->Body = "hello";
-        $mail1->AddAddress("tagore090574@gmail.com");
-
-         if(!$mail1->Send()) {
-            echo "Mailer Error: " . $mail1->ErrorInfo;
-         } else {
-            echo "Message has been sent";
-         }
 	    
         $mail_us->setFrom($email, $name );
         
@@ -161,7 +142,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
                 if ($err) {
-                   //echo "cURL Error #:" . $err;
+                   // echo "cURL Error #:" . $err;
                 }else{
                 	//echo "<br>echo1".$response;
                 }
@@ -208,22 +189,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         
         
-         $response1 = $mail->send();
-        $response2 = $mail_us->send();
-
-       
+        //$mail->send();
+        //$mail_us->send();
         
-        if($response1 && $response2){
+        if($mail->send() && $mail_us->send()){
             header('Location: success.php');
             exit;
         }else{
-
-           print_r($response1);
-        print_r($response2);
-
-         echo "Response 1".$response1;
-        echo "Response 2".$response2;
-          echo "Error in sending email";
          echo '<script type="text/javascript">$(".loader").hide()</script>';
         }
         
@@ -373,9 +345,9 @@ function googleTranslateElementInit() {
 </div>
  <div class="row">
           <div class="col-md-12">
-            <select id="drpLanguage"
+            preferred language : <select id="drpLanguage"
             onchange="javascript:changeLanguage(this.options[this.selectedIndex].value);changeLanguage(this.options[this.selectedIndex].value)" 
-            name="drpLanguage" title="Choose Language" class="big from-control">
+            name="drpLanguage" title="Choose Language" class="big pull-right">
             <option value='pramukhindic:telugu'>Telugu</option>
             <option value=":english" selected="selected">English</option>
             <option value='pramukhindic:hindi'>Hindi</option>
