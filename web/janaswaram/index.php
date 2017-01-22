@@ -532,6 +532,13 @@ else
       showNextTip(); // call for first time
       setTimeout('turnOffTip()', 90000); // show tips for 1.5 minutes
             document.getElementById('suggestion').focus();
+            document.getElementById('name').focus();
+            document.getElementById('Profession').focus();
+            document.getElementById('email').focus();
+            document.getElementById('phone').focus();
+            document.getElementById('phone').focus();
+
+
 
             // set width and height of dialog
             var w = window, d = document, e = d.documentElement, g = d.getElementsByTagName('body')[0], x = w.innerWidth || e.clientWidth || g.clientWidth, y = w.innerHeight || e.clientHeight || g.clientHeight;
