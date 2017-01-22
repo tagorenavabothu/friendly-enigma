@@ -222,13 +222,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        <!-- Latest compiled and minified CSS -->
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
-         <script src="js/intlTelInput.js"></script>
+        
 
          <script type="text/javascript" src="js/pramukhime.js"></script>
         <script type='text/javascript' src='js/pramukhindic.js' ></script>
 
         <script type="text/javascript" src="js/pramukhime-common.js"></script>
         <link type="text/css" href="css/pramukhtypepad.css" rel="Stylesheet" />
+
+         <script src="js/intlTelInput.js"></script>
         
 	<style>
 	body{
@@ -326,7 +328,8 @@ body {
       
                         <option value='pramukhindic:telugu'>Telugu</option>
 
-            <option value=":english" selected="selected">English (F9)</option>
+            <option value=":english" selected="selected">English</option>
+            <option value='pramukhindic:hindi'>Hindi</option>
         </select>
         <ul id="toolbar">
                     <li><a href="javascript:;" onclick="showHelp(this);" id="cmdhelp" title="Typing help"></a></li>
