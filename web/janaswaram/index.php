@@ -349,7 +349,7 @@ function googleTranslateElementInit() {
  <div class="row">
           <div class="col-md-12">
              <select id="drpLanguage"
-            onchange="javascript:changeLanguage(this.options[this.selectedIndex].value);updatelabels(this.options[this.selectedIndex].value)" 
+            onchange="javascript:changeLanguage(this.options[this.selectedIndex].value);)" 
             name="drpLanguage" title="Choose Language" class="big pull-right">
             <option value='pramukhindic:telugu'>Telugu</option>
             <option value=":english" selected="selected">English</option>
@@ -568,6 +568,6 @@ else
             elem.style.left = ((x - 700) / 2) + 'px';
 
 
-           
+
     </script>
 </html>

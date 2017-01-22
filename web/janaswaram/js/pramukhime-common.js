@@ -26,15 +26,20 @@ function addOption(elemid, text, value, selected) {
     elem.add(newopt);
 }
 
+
+//------ get the json file for language -----
+lang_div = {
+    "telugu" : {
+        "name" : "పేరు"
+    }
+}
+
+
 var tips = [], currenttip = 0, turnoff = false, piresourcebase='';
 // Callback function which gets called when user presses F9 key.
 function scriptChangeCallback(lang, kb, context) {
-
-    $.getJSON("lang/lang.json", function(json) {
-        console.log(json); // this will show the info it in firebug console
-    });
-
-    alert(lang);
+    alert("hi");
+     console.log(lang_div);
     // Change the dropdown to new selected language.
     document.getElementById('cmdhelp').className = (lang == 'english' ? 'disabled' : '');
 
