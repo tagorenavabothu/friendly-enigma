@@ -142,9 +142,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
                 if ($err) {
-                   // echo "cURL Error #:" . $err;
+                    echo "cURL Error #:" . $err;
                 }else{
-                	//echo "<br>echo1".$response;
+                	echo "<br>echo1".$response;
                 }
 
                 
@@ -564,9 +564,8 @@ else
             elem.style.left = ((x - 700) / 2) + 'px';
 
 
-            var updatelabels= function (lang) {
-              alert(lang);
-            }
-            
+            $("#drpLanguage").change(function(){
+                alert($("#drpLanguage : selected").text());
+            });
     </script>
 </html>
