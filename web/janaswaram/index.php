@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->IsHTML(true);
         
         if(!file_exists($_FILES['userfile']['tmp_name']) || !is_uploaded_file($_FILES['userfile']['tmp_name'])) {
-            //echo 'No upload';
+            echo 'No upload';
         }else{		    
             $uploadfile = tempnam(sys_get_temp_dir(), sha1($_FILES['userfile']['name']));
             
