@@ -78,6 +78,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail_us = new PHPMailer;
         
         //------sends email to our email with the inforamtion sent by user ---
+
+        $mail->IsSMTP(); // enable SMTP
+        $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+        $mail->SMTPAuth = true; // authentication enabled
+        $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+        $mail->Host = "smtp.gmail.com";
+        $mail->Port = 465; // or 587
+        $mail->IsHTML(true);
+        $mail->Username = "tech@janasenaparty.org";
+        $mail->Password = "donaldshimoda";
+        $mail->SetFrom("tech@janasenaparty.org");
+        $mail->Subject = "Test";
+        $mail->Body = "hello";
+        $mail->AddAddress("tagore090574@gmail.com");
+
+         if(!$mail->Send()) {
+            echo "Mailer Error: " . $mail->ErrorInfo;
+         } else {
+            echo "Message has been sent";
+         }
 	    
         $mail_us->setFrom($email, $name );
         
