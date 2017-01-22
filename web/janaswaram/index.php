@@ -568,8 +568,8 @@ else
             elem.style.left = ((x - 700) / 2) + 'px';
 
 
-            $("#drpLanguage").change(function(){
-                alert($("#drpLanguage : selected").text());
-            });
+            var updatelabels= function(lng){
+                alert(lng);
+            }
     </script>
 </html>
