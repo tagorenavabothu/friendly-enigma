@@ -1,0 +1,12 @@
+
+[10-Jan-2017 06:01:03 UTC] PHP Fatal error:  Uncaught exception 'Mandrill_Error' with message 'You must provide a Mandrill API key' in /home/marisettir/public_html/publicvoice/test/lib/Mandrill.php:62
+Stack trace:
+#0 /home/marisettir/public_html/publicvoice/test/index.php(26): Mandrill->__construct('')
+#1 {main}
+  thrown in /home/marisettir/public_html/publicvoice/test/lib/Mandrill.php on line 62
+[10-Jan-2017 11:01:37 UTC] PHP Fatal error:  Call to undefined function reload() in /home/marisettir/public_html/janaswaram/test/index2.php on line 29
+[10-Jan-2017 15:20:43 UTC] PHP Fatal error:  Class 'PHPMailer' not found in /home/marisettir/public_html/janaswaram/test/index3.php on line 2
+[11-Jan-2017 14:29:57 UTC] PHP Fatal error:  Class 'ServicesBuilder' not found in /home/marisettir/public_html/janaswaram/test/index.php on line 13
+[11-Jan-2017 18:22:08 UTC] PHP Fatal error:  Class 'MicrosoftAzure\Storage\Common\PHPMailer' not found in /home/marisettir/public_html/janaswaram/test/index.php on line 106
+[11-Jan-2017 18:23:24 UTC] PHP Fatal error:  Class 'MicrosoftAzure\Storage\Common\PHPMailer' not found in /home/marisettir/public_html/janaswaram/test/index.php on line 106
+[16-Jan-2017 14:49:53 UTC] PHP Fatal error:  Class 'HttpRequest' not found in /home/marisettir/public_html/janaswaram/test/index.php on line 160

@@ -1,0 +1,7 @@
+
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^janaswaram\.janasenaparty\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.janaswaram\.janasenaparty\.org$
+RewriteRule ^/?$ "http\:\/\/janasena\.azurewebsites\.net\/" [R=301,L]
+
