@@ -223,6 +223,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
          <script src="js/intlTelInput.js"></script>
+
+         <script type="text/javascript" src="js/pramukhime.js"></script>
+        <script type='text/javascript' src='js/pramukhindic.js' ></script>
+
+        <script type="text/javascript" src="js/pramukhime-common.js"></script>
+        <link type="text/css" href="css/pramukhtypepad.css" rel="Stylesheet" />
         
 	<style>
 	body{
@@ -311,6 +317,22 @@ body {
         <div class="row">
        <img src="img/Layer45.png" style="width:100%" />
         </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <select id="drpLanguage"
+            onchange="javascript:changeLanguage(this.options[this.selectedIndex].value);" 
+            name="drpLanguage" title="Choose Language" class="big">
+      
+                        <option value='pramukhindic:telugu'>Telugu</option>
+
+            <option value=":english" selected="selected">English (F9)</option>
+        </select>
+        <ul id="toolbar">
+                    <li><a href="javascript:;" onclick="showHelp(this);" id="cmdhelp" title="Typing help"></a></li>
+                </ul>
+          </div>
+        </div>
         
          <div class="row" style="background: #d81615;color:#fff;">
              <div class="col-md-12">
@@ -381,7 +403,7 @@ body {
               <div class="form-group">
 
                 <label for="suggestion">Suggestion/Opinion/Idea <span class="error-text"><?php echo " * ".$suggestionErr;?></span></label>
-                <textarea class="form-control" rows="4" cols="50" required="required" aria-required="true" name="suggestion"></textarea>
+                <textarea class="form-control" rows="4" cols="50" required="required" aria-required="true" id="suggestion" name="suggestion"></textarea>
               </div>
 		  </div>
         </div>
@@ -485,4 +507,37 @@ else
   ga('send', 'pageview');
 
 </script>
+
+<script language="javascript" type="text/javascript">
+        pramukhIME.addLanguage(PramukhIndic);
+
+      pramukhIME.enable();
+      pramukhIME.onLanguageChange(scriptChangeCallback);
+      var lang = (getCookie('pramukhime_language',':english')).split(':');
+      pramukhIME.setLanguage(lang[1], lang[0]);
+      var ul = document.getElementById('pi_tips');
+
+      var elem, len = ul.childNodes.length, i;
+      for (i = 0; i < len; i++) {
+          elem = ul.childNodes[i];
+          if (elem.tagName && elem.tagName.toLowerCase() == 'li') {
+              tips.push(elem.innerHTML);
+          }
+      }
+      for (i = len - 1; i > 1; i--) {
+          ul.removeChild(ul.childNodes[i]);
+      }
+      ul.childNodes[i].className = 'tip'; // replace small tip text with large
+
+      showNextTip(); // call for first time
+      setTimeout('turnOffTip()', 90000); // show tips for 1.5 minutes
+            document.getElementById('suggestion').focus();
+
+            // set width and height of dialog
+            var w = window, d = document, e = d.documentElement, g = d.getElementsByTagName('body')[0], x = w.innerWidth || e.clientWidth || g.clientWidth, y = w.innerHeight || e.clientHeight || g.clientHeight;
+            var elem = document.getElementById('dialog');
+            elem.style.top = ((y - 550) / 2) + 'px';
+            elem.style.left = ((x - 700) / 2) + 'px';
+            
+    </script>
 </html>
