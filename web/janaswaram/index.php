@@ -1,11 +1,12 @@
 <?php
 //namespace MicrosoftAzure\Storage\Common;
 
-
+phpinfo();
 
 require 'PHPMailer/PHPMailerAutoload.php';
 
-
+ini_set("SMTP", "aspmx.l.google.com");
+ini_set("sendmail_from", "tagore090574@gmail.com");
 
 // define variables and set to empty values
 $nameErr = $proffessionErr = $emailErr = $phonenoErr = $policyErr = $suggestionErr="";
