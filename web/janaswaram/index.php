@@ -1,7 +1,8 @@
 <?php
 //namespace MicrosoftAzure\Storage\Common;
 
-
+ini_set('upload_max_filesize','30M');
+ini_set('post_max_size','30M');
 
 require 'PHPMailer/PHPMailerAutoload.php';
 
