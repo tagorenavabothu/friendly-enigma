@@ -26,9 +26,22 @@ function addOption(elemid, text, value, selected) {
     elem.add(newopt);
 }
 
-var telugu = {
-
-    "name" : "పేరు"
+lang_divs ={
+    "tel": [{
+        "0": "hallo",
+        "1": "my",
+        "2": "cef"
+    }],
+    "hind": [{
+        "0": "fuck",
+        "1": "thy",
+        "2": "lufe"
+    }],
+    "eng": [{
+        "0": "my",
+        "1": "der",
+        "2": "hey"
+    }]
 }
 
 var tips = [], currenttip = 0, turnoff = false, piresourcebase='';
@@ -37,7 +50,8 @@ function scriptChangeCallback(lang, kb, context) {
 
     
     alert(lang);
-    console.log(telugu);
+    alert(lang_divs);
+    console.log(lang_divs);
     // Change the dropdown to new selected language.
     document.getElementById('cmdhelp').className = (lang == 'english' ? 'disabled' : '');
 
