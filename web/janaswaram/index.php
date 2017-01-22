@@ -142,9 +142,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
                 if ($err) {
-                   echo "cURL Error #:" . $err;
+                   //echo "cURL Error #:" . $err;
                 }else{
-                	echo "<br>echo1".$response;
+                	//echo "<br>echo1".$response;
                 }
 
                 
@@ -183,16 +183,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             curl_close($curl);
 
             if ($err) {
-                echo "cURL Error #:" . $err;
+                //echo "cURL Error #:" . $err;
             }else{
-            	echo "<br>echo 2".$response;
+            	//echo "<br>echo 2".$response;
             }
         
         
-        //$mail->send();
-        //$mail_us->send();
+         $response1 = $mail->send();
+        $response2 = $mail_us->send();
+
+        print_r($response1);
+        print_r($response2);
         
-        if($mail->send() && $mail_us->send()){
+        if($response1 && $response2){
             header('Location: success.php');
             exit;
         }else{
@@ -348,7 +351,7 @@ function googleTranslateElementInit() {
           <div class="col-md-12">
             <select id="drpLanguage"
             onchange="javascript:changeLanguage(this.options[this.selectedIndex].value);changeLanguage(this.options[this.selectedIndex].value)" 
-            name="drpLanguage" title="Choose Language" class="big from-control">
+            name="drpLanguage" title="Choose Language" class="big pull-right">
             <option value='pramukhindic:telugu'>Telugu</option>
             <option value=":english" selected="selected">English</option>
             <option value='pramukhindic:hindi'>Hindi</option>
