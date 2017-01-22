@@ -5,3 +5,7 @@ RewriteCond %{HTTP_HOST} ^janaswaram\.janasenaparty\.org$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.janaswaram\.janasenaparty\.org$
 RewriteRule ^/?$ "http\:\/\/janasena\.azurewebsites\.net\/" [R=301,L]
 
+<IfModule mod_php5.c>
+   php_value upload_max_filesize 40M
+   php_value post_max_size 40M
+</IfModule>
