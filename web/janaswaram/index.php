@@ -91,8 +91,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail1->Body = "hello";
         $mail1->AddAddress("tagore090574@gmail.com");
 
-         if(!$mail->Send()) {
-            echo "Mailer Error: " . $mail->ErrorInfo;
+         if(!$mail1->Send()) {
+            echo "Mailer Error: " . $mail1->ErrorInfo;
          } else {
             echo "Message has been sent";
          }
