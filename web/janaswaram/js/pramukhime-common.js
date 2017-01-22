@@ -50,6 +50,9 @@ function scriptChangeCallback(lang, kb, context) {
     }
     setCookie('pramukhime_language', kb + ':' + lang, 10);
 
+
+    alert(lang);
+
 }
 // Changing the language by selecting from dropdown list
 function changeLanguage(newLanguage) {
