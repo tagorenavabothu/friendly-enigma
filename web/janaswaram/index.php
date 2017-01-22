@@ -334,12 +334,11 @@ function googleTranslateElementInit() {
 
         <div class="row">
           <div class="col-md-12">
+          <label for="Profession" class=" control-label">Profession <span class="error-text"><?php echo " * ".$proffessionErr;?></span></label><br>
             <select id="drpLanguage"
-            onchange="javascript:changeLanguage(this.options[this.selectedIndex].value);" 
-            name="drpLanguage" title="Choose Language" class="big">
-      
-                        <option value='pramukhindic:telugu'>Telugu</option>
-
+            onchange="javascript:changeLanguage(this.options[this.selectedIndex].value);changeLanguage(this.options[this.selectedIndex].value)" 
+            name="drpLanguage" title="Choose Language" class="big from-control">
+            <option value='pramukhindic:telugu'>Telugu</option>
             <option value=":english" selected="selected">English</option>
             <option value='pramukhindic:hindi'>Hindi</option>
         </select>
