@@ -346,7 +346,7 @@ function googleTranslateElementInit() {
  <div class="row">
           <div class="col-md-12">
             <p class="pull-right">preferred language :</p> <select id="drpLanguage"
-            onchange="javascript:changeLanguage(this.options[this.selectedIndex].value);changeLanguage(this.options[this.selectedIndex].value)" 
+            onchange="javascript:changeLanguage(this.options[this.selectedIndex].value);updatelabels(this.options[this.selectedIndex].value)" 
             name="drpLanguage" title="Choose Language" class="big pull-right">
             <option value='pramukhindic:telugu'>Telugu</option>
             <option value=":english" selected="selected">English</option>
@@ -562,6 +562,11 @@ else
             var elem = document.getElementById('dialog');
             elem.style.top = ((y - 550) / 2) + 'px';
             elem.style.left = ((x - 700) / 2) + 'px';
+
+
+            var updatelabels= function (lang) {
+              alert(lang);
+            }
             
     </script>
 </html>
