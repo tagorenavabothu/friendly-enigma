@@ -354,10 +354,10 @@ function googleTranslateElementInit() {
  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,hi,te'}, 'google_translate_element');
 }
 
-window.setInterval(function(){
-     var lang = $(".goog-te-menu-value span:first").text();
-     alert(lang);
-},5000);
+$('.goog-te-combo').on('change',function(){
+       language = $("select.goog-te-combo option:selected").text();
+        alert(language);
+    });
 </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
