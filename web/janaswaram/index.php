@@ -210,7 +210,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <title>Janaswaram | jansenaparty.org</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Tagore & Ram">     
+        <meta name="author" content="Tagore & Ram"> 
+
+        
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
          <link rel="stylesheet" href="css/intlTelInput.css">
         <link rel="stylesheet" href="css/demo.css">
