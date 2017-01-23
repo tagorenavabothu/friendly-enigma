@@ -1,11 +1,5 @@
 <?php
 //namespace MicrosoftAzure\Storage\Common;
-
-ini_set('upload_max_filesize', '10M');
-ini_set('post_max_size', '10M');
-ini_set('max_input_time', 300);
-ini_set('max_execution_time', 300);
-
 require 'PHPMailer/PHPMailerAutoload.php';
 
 
@@ -73,14 +67,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $phoneno = test_input($_POST["phoneno"]);
         $policy = test_input($_POST["policy"]);
         $suggestion = test_input($_POST["suggestion"]);
-        	$i = uniqid();
+          $i = uniqid();
             
         
         $mail = new PHPMailer;
         $mail_us = new PHPMailer;
         
         //------sends email to our email with the inforamtion sent by user ---
-	    
+      
         $mail_us->setFrom($email, $name );
         
         $mail_us->AddReplyTo( $email, $name );
@@ -105,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         if(!file_exists($_FILES['userfile']['tmp_name']) || !is_uploaded_file($_FILES['userfile']['tmp_name'])) {
             echo 'No upload';
-        }else{		    
+        }else{        
             $uploadfile = tempnam(sys_get_temp_dir(), sha1($_FILES['userfile']['name']));
             
             if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
@@ -147,7 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($err) {
                     echo "cURL Error #:" . $err;
                 }else{
-                	echo "<br>echo1".$response;
+                  echo "<br>echo1".$response;
                 }
 
                 
@@ -188,7 +182,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($err) {
                 //echo "cURL Error #:" . $err;
             }else{
-            	//echo "<br>echo 2".$response;
+              //echo "<br>echo 2".$response;
             }
         
         
@@ -221,10 +215,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          <link rel="stylesheet" href="css/intlTelInput.css">
         <link rel="stylesheet" href="css/demo.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" ></script> 
-	<!--<link rel="stylesheet" href="css/bootstrap.css">-->
+  <!--<link rel="stylesheet" href="css/bootstrap.css">-->
        <!-- Latest compiled and minified CSS -->
 
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
         
 
          <script type="text/javascript" src="js/pramukhime.js"></script>
@@ -235,18 +229,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
          <script src="js/intlTelInput.js"></script>
         
-	<style>
-	body{
-	background: #fefefe;
-	margin:0;
-	}
-	.container{
-	background: white;
-	    -webkit-box-shadow: 1px 1px 10px 5px rgba(160, 160, 160, 0.53);
+  <style>
+  body{
+  background: #fefefe;
+  margin:0;
+  }
+  .container{
+  background: white;
+      -webkit-box-shadow: 1px 1px 10px 5px rgba(160, 160, 160, 0.53);
     -moz-box-shadow: 1px 1px 10px 5px rgba(160, 160, 160, 0.53);
     box-shadow: 1px 1px 10px 5px rgba(160, 160, 160, 0.53);
 }
-	h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 300;
     line-height: 1.1;
@@ -256,13 +250,13 @@ body {
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     
 }
-	.form-area
-	{
-	    background-color: #FAFAFA;
-	    padding: 10px 40px 60px;
-	}
-	.banner{  margin: 0 auto; background:url('banner.png'); background-repeat: no-repeat; background-attachment:absolute; }
-	.banner { height: 250px; display:block; padding-top:0px; }
+  .form-area
+  {
+      background-color: #FAFAFA;
+      padding: 10px 40px 60px;
+  }
+  .banner{  margin: 0 auto; background:url('banner.png'); background-repeat: no-repeat; background-attachment:absolute; }
+  .banner { height: 250px; display:block; padding-top:0px; }
         .form-control:focus {
   border-color: #FF0000;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
@@ -289,34 +283,34 @@ body {
           color: red;
         }
  
-	.loader{
-	  position: fixed;
-	  background: rgba(0,0,0,0.6);
-	  width:100%;
-	  height: 100%;
-	  left:0;
-	  top:0;
-	  margin:0 auto;
-	  z-index : 100;
-	  display : none;
-	}
-	.spinner{
-	  margin: 0 auto;
-	  width:100px;
-	  margin-top: 10%;
-	  height: 100px;
-	  
-	}
+  .loader{
+    position: fixed;
+    background: rgba(0,0,0,0.6);
+    width:100%;
+    height: 100%;
+    left:0;
+    top:0;
+    margin:0 auto;
+    z-index : 100;
+    display : none;
+  }
+  .spinner{
+    margin: 0 auto;
+    width:100px;
+    margin-top: 10%;
+    height: 100px;
+    
+  }
 
-	</style>
+  </style>
     </head>
     <body>
     
     <div class="loader">
-	  <div class="spinner">
-	    <svg width='48px' height='48px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-hourglass"><rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect><g><path fill="none" stroke="#007282" stroke-width="5" stroke-miterlimit="10" d="M58.4,51.7c-0.9-0.9-1.4-2-1.4-2.3s0.5-0.4,1.4-1.4 C70.8,43.8,79.8,30.5,80,15.5H70H30H20c0.2,15,9.2,28.1,21.6,32.3c0.9,0.9,1.4,1.2,1.4,1.5s-0.5,1.6-1.4,2.5 C29.2,56.1,20.2,69.5,20,85.5h10h40h10C79.8,69.5,70.8,55.9,58.4,51.7z" class="glass"></path><clipPath id="uil-hourglass-clip1"><rect x="15" y="20" width="70" height="25" class="clip"><animate attributeName="height" from="25" to="0" dur="1s" repeatCount="indefinite" vlaues="25;0;0" keyTimes="0;0.5;1"></animate><animate attributeName="y" from="20" to="45" dur="1s" repeatCount="indefinite" vlaues="20;45;45" keyTimes="0;0.5;1"></animate></rect></clipPath><clipPath id="uil-hourglass-clip2"><rect x="15" y="55" width="70" height="25" class="clip"><animate attributeName="height" from="0" to="25" dur="1s" repeatCount="indefinite" vlaues="0;25;25" keyTimes="0;0.5;1"></animate><animate attributeName="y" from="80" to="55" dur="1s" repeatCount="indefinite" vlaues="80;55;55" keyTimes="0;0.5;1"></animate></rect></clipPath><path d="M29,23c3.1,11.4,11.3,19.5,21,19.5S67.9,34.4,71,23H29z" clip-path="url(#uil-hourglass-clip1)" fill="#ffab00" class="sand"></path><path d="M71.6,78c-3-11.6-11.5-20-21.5-20s-18.5,8.4-21.5,20H71.6z" clip-path="url(#uil-hourglass-clip2)" fill="#ffab00" class="sand"></path><animateTransform attributeName="transform" type="rotate" from="0 50 50" to="180 50 50" repeatCount="indefinite" dur="1s" values="0 50 50;0 50 50;180 50 50" keyTimes="0;0.7;1"></animateTransform></g></svg>
-	  </div>
-	</div>  
+    <div class="spinner">
+      <svg width='48px' height='48px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-hourglass"><rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect><g><path fill="none" stroke="#007282" stroke-width="5" stroke-miterlimit="10" d="M58.4,51.7c-0.9-0.9-1.4-2-1.4-2.3s0.5-0.4,1.4-1.4 C70.8,43.8,79.8,30.5,80,15.5H70H30H20c0.2,15,9.2,28.1,21.6,32.3c0.9,0.9,1.4,1.2,1.4,1.5s-0.5,1.6-1.4,2.5 C29.2,56.1,20.2,69.5,20,85.5h10h40h10C79.8,69.5,70.8,55.9,58.4,51.7z" class="glass"></path><clipPath id="uil-hourglass-clip1"><rect x="15" y="20" width="70" height="25" class="clip"><animate attributeName="height" from="25" to="0" dur="1s" repeatCount="indefinite" vlaues="25;0;0" keyTimes="0;0.5;1"></animate><animate attributeName="y" from="20" to="45" dur="1s" repeatCount="indefinite" vlaues="20;45;45" keyTimes="0;0.5;1"></animate></rect></clipPath><clipPath id="uil-hourglass-clip2"><rect x="15" y="55" width="70" height="25" class="clip"><animate attributeName="height" from="0" to="25" dur="1s" repeatCount="indefinite" vlaues="0;25;25" keyTimes="0;0.5;1"></animate><animate attributeName="y" from="80" to="55" dur="1s" repeatCount="indefinite" vlaues="80;55;55" keyTimes="0;0.5;1"></animate></rect></clipPath><path d="M29,23c3.1,11.4,11.3,19.5,21,19.5S67.9,34.4,71,23H29z" clip-path="url(#uil-hourglass-clip1)" fill="#ffab00" class="sand"></path><path d="M71.6,78c-3-11.6-11.5-20-21.5-20s-18.5,8.4-21.5,20H71.6z" clip-path="url(#uil-hourglass-clip2)" fill="#ffab00" class="sand"></path><animateTransform attributeName="transform" type="rotate" from="0 50 50" to="180 50 50" repeatCount="indefinite" dur="1s" values="0 50 50;0 50 50;180 50 50" keyTimes="0;0.7;1"></animateTransform></g></svg>
+    </div>
+  </div>  
       
         <div class="container">
         <div class="row">
@@ -338,9 +332,9 @@ function googleTranslateElementInit() {
        
          <div class="row" style="background: #d81615;color:#fff;">
              <div class="col-md-12">
-                    <h4 style="text-align: center"><b>Janasena Party stands for strengthening and empowering civil society.</b></h4>
-                  <h4 style="text-align: center"><b>Introducing Janaswaram, a platform for public participation in policy making.</b></h4>
-                <h4 style="text-align: center">People with insightful ideas, opinions and suggestions will get a chance to participate in emerging leadership programs & policy workshops.</h4>
+                    <h4 style="text-align: center" class="top1"><b>Janasena Party stands for strengthening and empowering civil society.</b></h4>
+                  <h4 style="text-align: center" class="top2"><b>Introducing Janaswaram, a platform for public participation in policy making.</b></h4>
+                <h4 style="text-align: center" class="top3">People with insightful ideas, opinions and suggestions will get a chance to participate in emerging leadership programs & policy workshops.</h4>
                 
              </div>
        
@@ -355,7 +349,7 @@ function googleTranslateElementInit() {
             <option value=":english" selected="selected">English</option>
             <option value='pramukhindic:hindi'>Hindi</option>
         </select>
-        <p class="pull-right">preferred language :</p>
+        <p class="pull-right preferedlang">preferred language :</p>
         <ul id="toolbar">
                     <li><a href="javascript:;" onclick="showHelp(this);" id="cmdhelp" title="Typing help"></a></li>
                 </ul>
@@ -368,14 +362,14 @@ function googleTranslateElementInit() {
         <div class="row">
             <div class="col-md-6 col-sm-6">
               <div class="form-group">
-                <label for="name">Name <span class="error-text"><?php echo " * ".$nameErr;?></span></label>
+                <label for="name" ><span class="name">Name</span> <span class="error-text"><?php echo " * ".$nameErr;?></span></label>
                 <input type="text" name="name" class="form-control" id="name" required>
               </div>
             </div>
-		   <div class="col-md-6 col-sm-6">
+       <div class="col-md-6 col-sm-6">
               <div class="form-group">
 
-                <label for="Profession" class=" control-label">Profession <span class="error-text"><?php echo " * ".$proffessionErr;?></span></label><br>
+                <label for="Profession" class=" control-label "><span class="Profession">Profession</span> <span class="error-text"><?php echo " * ".$proffessionErr;?></span></label><br>
                   <select name="Profession" id="Profession" class="form-control" required>
                     <option value="" selected>Select One</option>
                     <option value="Academician">Academician</option>
@@ -386,27 +380,27 @@ function googleTranslateElementInit() {
                     <option value="Other">Other</option>
                 </select>
               </div>
-		  </div>
+      </div>
         </div>
-		   
-	   <div class="row">
-		  <div class="col-md-6 col-sm-6">
+       
+     <div class="row">
+      <div class="col-md-6 col-sm-6">
               <div class="form-group">
-                <label for="email">Email <span class="error-text"><?php echo " * ".$emailErr;?></span></label>
+                <label for="email"><span class="email">Email</span> <span class="error-text"><?php echo " * ".$emailErr;?></span></label>
                 <input type="email" name="email" class="form-control" id="email" required>
               </div>
-		  </div>
-		  <div class="col-md-6 col-sm-6">
+      </div>
+      <div class="col-md-6 col-sm-6">
               <div class="form-group">
-                <label for="phoneno">Phone Number <span class="error-text"><?php echo " * ".$phonenoErr;?></span></label>
+                <label for="phoneno" class="phoneno"><span class="phoneno">Phone Number</span> <span class="error-text"><?php echo " * ".$phonenoErr;?></span></label>
                 <input type="text" name="phoneno" class="form-control" maxlength=15 id="phone" required>
               </div>
-		  </div>
+      </div>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                <label for="policy">Policy Issues <span class="error-text"><?php echo " * ".$policyErr;?></span></label>
+                <label for="policy"><span class="policyissue">Policy Issues</span> <span class="error-text"><?php echo " * ".$policyErr;?></span></label>
                   <select name="policy" class="form-control" required>
                     <option value="" selected>Select One</option>
                     <option value="Land Acquisition">Land Acquisition</option>
@@ -417,66 +411,51 @@ function googleTranslateElementInit() {
             </div>
         </div>
         <div class="row">
-		  <div class="col-md-12">
+      <div class="col-md-12">
               <div class="form-group">
 
-                <label for="suggestion">Suggestion/Opinion/Idea <span class="error-text"><?php echo " * ".$suggestionErr;?></span></label>
+                <label for="suggestion" class="sugestion"><span class="suggestion">Suggestion/Opinion/Idea</span> <span class="error-text"><?php echo " * ".$suggestionErr;?></span></label>
                 <textarea class="form-control" rows="4" cols="50" required="required" aria-required="true" id="suggestion" name="suggestion"></textarea>
               </div>
-		  </div>
+      </div>
         </div>
             <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label for="file">Attachments :</label>
-                    <input type="hidden" name="MAX_FILE_SIZE" value="10000000"> Please attach supporting documents or videos <input class="form-control" name="userfile" type="file" accept=
+                    <label for="file" ><span class="attachements">Attachments </span></label>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="10000000" > <span class="attachements_hint">Please attach supporting documents or videos</span> <input class="form-control" name="userfile" type="file" accept=
         "application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,
         text/plain, application/pdf,audio/*,video/*,image/* ">
                   </div>
                 </div>
             </div>
-		  <div class="row">
+      <div class="row">
             
-		  <div class="col-md-12" style="text-align:center;">		 
+      <div class="col-md-12" style="text-align:center;">     
 <div class="g-recaptcha" data-sitekey="6LcZQhIUAAAAANQ7XJPTY3hBIcNYOwKZ7OhHus8f" data-theme="light"></div>          
 </div>
 </div>
-		  <div class="row">
+      <div class="row">
             
-		  <div class="col-md-12" style="text-align:center;">		 
-		  <input type="submit" class="btn btn-danger btn-lg" value="Submit">
-		  </div>
-		  <br><br>
+      <div class="col-md-12" style="text-align:center;">     
+      <input type="submit" class="btn btn-danger btn-lg" value="Submit">
+      </div>
+      <br><br>
         </div>
-		</form>
-        		
-        	
+    </form>
+            
+          
         </div>
 
-        
-        <script>
-  jQuery(document).ready(function() {
-                jQuery("#submit").click(function() {
-                    var sen_email = jQuery('.sen_email').val();
-                    var rec_email = jQuery('.rec_email').val();
-                    if (sen_email == "") {
-                        alert('Sender\'s Email Address cannot be empty.');
-                    }
-                     if (rec_email == "") {
-                        alert('Receiver\'s Email Address cannot be empty.');
-                    }
-                });
-            });
-        </script>
      <script>
     $("#phone").intlTelInput({
     allowExtensions: false,
       // allowDropdown: false,
       // autoHideDialCode: false,
-       	autoPlaceholder: "off",
-       	autoHideDialCode: false,
-   	autoPlaceholder: false,
-   	nationalMode: false,
+        autoPlaceholder: "off",
+        autoHideDialCode: false,
+    autoPlaceholder: false,
+    nationalMode: false,
       // dropdownContainer: "body",
       // excludeCountries: ["IN"],
       // formatOnDisplay: false,

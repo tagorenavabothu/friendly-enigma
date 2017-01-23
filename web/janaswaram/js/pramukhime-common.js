@@ -27,21 +27,56 @@ function addOption(elemid, text, value, selected) {
 }
 
 lang_divs ={
-    "tel": [{
-        "0": "hallo",
-        "1": "my",
-        "2": "cef"
+    "telugu": [{
+        "top1": "hallo",
+        "top2": "my",
+        "top3": "cef",
+        "preferedlang" : "sdfds : ",
+        "name" : "peru",
+        "profession" : "prof",
+        "email" : "test email",
+        "phoneno" : "mobule no",
+        "policyissue" : "polis",
+        "sugestion" : "corres",
+        "attachements" : "att",
+        "attachements_hint" : "hint"
     }],
-    "hind": [{
-        "0": "fuck",
-        "1": "thy",
-        "2": "lufe"
+    "hindi": [{
+        "top1": "hindi",
+        "top2": "hinkj",
+        "top3": "People",
+        "preferedlang" : "language : ",
+        "name" : "kl",
+        "profession" : "Profession",
+        "email" : "Email",
+        "phoneno" : "Phone Number",
+        "policyissue" : "Phone Number",
+        "sugestion" : "Suggestion/Opinion/Idea ",
+        "attachements" : "Attachments ",
+        "attachements_hint" : "Please attach supporting documents or videos"
     }],
-    "eng": [{
-        "0": "my",
-        "1": "der",
-        "2": "hey"
+    "english": [{
+        "top1": "Janasena Party stands for strengthening and empowering civil society.",
+        "top2": "Introducing Janaswaram, a platform for public participation in policy making.",
+        "top3": "People with insightful ideas, opinions and suggestions will get a chance to participate in emerging leadership programs & policy workshops.",
+        "preferedlang" : "preferred language : ",
+        "name" : "Name",
+        "profession" : "Profession",
+        "email" : "Email",
+        "phoneno" : "Phone Number",
+        "policyissue" : "Phone Number",
+        "sugestion" : "Suggestion/Opinion/Idea ",
+        "attachements" : "Attachments ",
+        "attachements_hint" : "Please attach supporting documents or videos"
     }]
+}
+
+function replacelabels(data){
+    console.log(data);
+    $.each(data[0],function(key,value){
+            console.log(key+":"+value);
+            $("."+key).text(value);
+        });
 }
 
 var tips = [], currenttip = 0, turnoff = false, piresourcebase='';
@@ -49,9 +84,10 @@ var tips = [], currenttip = 0, turnoff = false, piresourcebase='';
 function scriptChangeCallback(lang, kb, context) {
 
     
-    alert("check : "+lang);
-    alert(lang_divs);
-    console.log(lang_divs);
+    //alert("check : "+lang);
+   // alert(lang_divs);
+    replacelabels(lang_divs[lang]);
+    //console.log(lang_divs[lang]);
     
     // Change the dropdown to new selected language.
     document.getElementById('cmdhelp').className = (lang == 'english' ? 'disabled' : '');
