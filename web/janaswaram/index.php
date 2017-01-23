@@ -57,9 +57,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     else if (empty($_POST["suggestion"])) {
         $suggestionErr = "Suggestion is required";
     }else if(isset($_FILES['userfile']) {
-    if($_FILES['userfile']['size'] > 10485760*2) { //10 MB (size is also in bytes)
+      if($_FILES['userfile']['size'] > 10485760*2) { //10 MB (size is also in bytes)
         // File too big
-      $fileuploadErr = "File size is more than approved limit.";
+        $fileuploadErr = "File size is more than approved limit.";
+      }
     }
     else {
         $url = 'https://janasenatest.table.core.windows.net:443/Janasena?st=2017-01-16T04%3A42%3A00Z&se=2034-01-17T04%3A42%3A00Z&sp=raud&sv=2015-12-11&tn=janasena&sig=usgASgviZ1Ds2E6jaFG6zXpSLWVIcltlh49%2Bx0uylDM%3D';
