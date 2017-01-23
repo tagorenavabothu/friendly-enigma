@@ -3,7 +3,7 @@
 require 'PHPMailer/PHPMailerAutoload.php';
 
 
-
+phpinfo();
 // define variables and set to empty values
 $nameErr = $proffessionErr = $emailErr = $phonenoErr = $policyErr = $suggestionErr="";
 $name = $Profession = $email = $phoneno = $policy = $suggestion= "";
@@ -212,7 +212,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Tagore & Ram"> 
 
-        
+
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Cache-control" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
