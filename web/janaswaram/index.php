@@ -433,7 +433,7 @@ function googleTranslateElementInit() {
                 <div class="col-md-12">
                   <div class="form-group">
                     <label for="file" ><span class="attachements">Attachments </span></label>
-                    <input type="hidden" name="MAX_FILE_SIZE" value="10000000" > <span class="attachements_hint">Please attach supporting documents or videos (Max size: 20MB)</span> <span><?php echo " * ".$fileuploadErr;?></span> <input class="form-control" name="userfile" type="file" accept=
+                    <input type="hidden" name="MAX_FILE_SIZE" value="10000000" > <span class="attachements_hint">Please attach supporting documents or videos (Max size: 20MB)</span> <span><?php echo "".$fileuploadErr;?></span> <input class="form-control" name="userfile" type="file" accept=
         "application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,
         text/plain, application/pdf,audio/*,video/*,image/* ">
                   </div>
