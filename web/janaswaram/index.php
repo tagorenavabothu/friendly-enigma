@@ -2,8 +2,6 @@
 //namespace MicrosoftAzure\Storage\Common;
 require 'PHPMailer/PHPMailerAutoload.php';
 
-
-phpinfo();
 // define variables and set to empty values
 $nameErr = $proffessionErr = $emailErr = $phonenoErr = $policyErr = $suggestionErr="";
 $name = $Profession = $email = $phoneno = $policy = $suggestion= "";
