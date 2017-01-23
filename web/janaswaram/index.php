@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $suggestionErr = "Suggestion is required";
     }else if(isset($_FILES['userfile']) {
       if($_FILES['userfile']['size'] > 10485760*2) { //10 MB (size is also in bytes)
-        // File too big
+        // File too big -----
         $fileuploadErr = "File size is more than approved limit.";
       }
     }
