@@ -32,6 +32,8 @@ function valid_email($email)
     }
 }
 
+echo $_FILES['userfile']['size'] ;
+
 $allowed = array("image/jpeg", "image/gif", "application/pdf");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
