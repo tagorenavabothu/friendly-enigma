@@ -22,6 +22,8 @@ function send_mail($email,$subject,$msg) {
 }
 
 
+print_r(send_mail("tagore090574@gmail.com","test","test msg"));
+
 
 
 
