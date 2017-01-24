@@ -9,7 +9,7 @@ function send_mail($email,$subject,$msg) {
  curl_setopt($ch, CURLOPT_USERPWD, 'api:'.$api_key);
  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
- curl_setopt($ch, CURLOPT_URL, 'https://api.mailgun.net/v2/'.$domain.'/messages');
+ curl_setopt($ch, CURLOPT_URL, 'https://api.mailgun.net/v3/'.$domain.'/messages');
  curl_setopt($ch, CURLOPT_POSTFIELDS, array(
   'from' => 'Open <tagore090574@gmail.com>',
   'to' => $email,
