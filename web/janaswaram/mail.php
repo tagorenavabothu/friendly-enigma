@@ -1,5 +1,31 @@
 <?php 
-$mg_api = 'key-8b9ec8621dc641919463d10a9848c2a9';
+
+
+function send_mail($email,$subject,$msg) {
+ $api_key="key-8b9ec8621dc641919463d10a9848c2a9";/* Api Key got from https://mailgun.com/cp/my_account */
+ $domain ="janasenaparty.org";/* Domain Name you given to Mailgun */
+ $ch = curl_init();
+ curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+ curl_setopt($ch, CURLOPT_USERPWD, 'api:'.$api_key);
+ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+ curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+ curl_setopt($ch, CURLOPT_URL, 'https://api.mailgun.net/v2/'.$domain.'/messages');
+ curl_setopt($ch, CURLOPT_POSTFIELDS, array(
+  'from' => 'Open <tagore090574@gmail.com>',
+  'to' => $email,
+  'subject' => $subject,
+  'html' => $msg
+ ));
+ $result = curl_exec($ch);
+ curl_close($ch);
+ return $result;
+}
+
+
+
+
+
+/*$mg_api = 'key-8b9ec8621dc641919463d10a9848c2a9';
 $mg_version = 'api.mailgun.net/v2/';
 $mg_domain = "www.janasenaparty.org";
 $mg_from_email = "tagore090574@gmail.com";
@@ -40,5 +66,5 @@ curl_setopt($ch, CURLOPT_POSTFIELDS,
 $result = curl_exec($ch);
 curl_close($ch);
 $res = json_decode($result,TRUE);
-print_r($res);
+print_r($res);*/
 ?>
