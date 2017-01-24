@@ -1,7 +1,7 @@
 <?php 
-$mg_api = 'key-3ax6xnjp29jd6fds4gc373sgvjxteol0';
+$mg_api = 'key-8b9ec8621dc641919463d10a9848c2a9';
 $mg_version = 'api.mailgun.net/v2/';
-$mg_domain = "janasenaparty.org";
+$mg_domain = "www.janasenaparty.org";
 $mg_from_email = "tagore090574@gmail.com";
 $mg_reply_to_email = "tagore090574@gmail.org";
 
