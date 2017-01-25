@@ -1,6 +1,6 @@
 <?php
 //namespace MicrosoftAzure\Storage\Common;
-require 'PHPMailer/PHPMailerAutoload.php';
+//require 'PHPMailer/PHPMailerAutoload.php';
 
 // define variables and set to empty values
 $nameErr = $proffessionErr = $emailErr = $phonenoErr = $policyErr = $suggestionErr= $fileuploadErr= "";
@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
 
 
-        $sendemail = send_mail($email,$subject,$msg);
+        //$sendemail = send_mail($email,$subject,$msg);
         
         if(!file_exists($_FILES['userfile']['tmp_name']) || !is_uploaded_file($_FILES['userfile']['tmp_name'])) {
             echo 'No upload';
@@ -197,13 +197,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         //$mail->send()-----;
         //$mail_us->send();
-        //echo $sendemail;
-        if($sendemail){
+          //  echo "This is testing";
+        //print_r(send_mail($email,$subject,$msg));
+       // if($sendemail){
             header('Location: success.php');
-            exit;
-        }else{
-         echo '<script type="text/javascript">$(".loader").hide()</script>';
-        }
+          //  exit;
+       // }else{
+       //  echo '<script type="text/javascript">$(".loader").hide()</script>';
+       // }
         
         
         
@@ -213,10 +214,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-
-
-
-
 <html>
     <head>
        
@@ -361,18 +358,25 @@ function googleTranslateElementInit() {
 
 </div>
  <div class="row">
-          <div class="col-md-12">
-             <select id="drpLanguage"
+          <div class="col-md-offset-8 col-md-4 col-xs-12 col-sm-9 form-inline ">
+
+            <div class="form-group pull-right">
+                <label for="drpLanguage" ><p class="preferedlang" style="line-height:2.5em;">preferred language :</p></label>
+                <select id="drpLanguage"
             onchange="javascript:changeLanguage(this.options[this.selectedIndex].value);" 
-            name="drpLanguage" title="Choose Language" class="big pull-right">
+            name="drpLanguage" title="Choose Language" class="big pull-right form-control">
             <option value='pramukhindic:telugu'>Telugu</option>
             <option value=":english" selected="selected">English</option>
             <option value='pramukhindic:hindi'>Hindi</option>
         </select>
-        <p class="pull-right preferedlang">preferred language :</p>
-        <ul id="toolbar">
+              </div>
+
+
+             
+        <!-- <p class="pull-right preferedlang">preferred language :</p> -->
+        <!-- <ul id="toolbar">
                     <li><a href="javascript:;" onclick="showHelp(this);" id="cmdhelp" title="Typing help"></a></li>
-                </ul>
+                </ul> -->
           </div>
         </div>
 
