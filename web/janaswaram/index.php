@@ -189,9 +189,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             curl_close($curl);
 
             if ($err) {
-                //echo "cURL Error #:" . $err;
+                echo "cURL Error #:" . $err;
             }else{
-              //echo "<br>echo 2".$response;
+              echo "<br>echo 2".$response;
             }
         
         
@@ -546,6 +546,7 @@ else
           elem = ul.childNodes[i];
           if (elem.tagName && elem.tagName.toLowerCase() == 'li') {
               tips.push(elem.innerHTML);
+              console.log(elem.innerHTML);
           }
       }
       for (i = len - 1; i > 1; i--) {
