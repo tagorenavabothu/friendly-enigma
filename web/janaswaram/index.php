@@ -14,6 +14,30 @@ function test_input($data) {
 }
 
 
+"-------- send Thankyou email to user --------------"
+
+function send_mail($email,$subject,$msg) {
+ $api_key="key-8b9ec8621dc641919463d10a9848c2a9";/* Api Key got from https://mailgun.com/cp/my_account */
+ $domain ="janasenaparty.org";/* Domain Name you given to Mailgun */
+ $ch = curl_init();
+ curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+ curl_setopt($ch, CURLOPT_USERPWD, 'api:'.$api_key);
+ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+ curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+ curl_setopt($ch, CURLOPT_URL, 'https://api.mailgun.net/v3/'.$domain.'/messages');
+ curl_setopt($ch, CURLOPT_POSTFIELDS, array(
+  'from' => 'Janasena Party <janaswaram@janasenaparty.org>',
+  'to' => $email,
+  'subject' => $subject,
+  'html' => $msg
+ ));
+ $result = curl_exec($ch);
+ curl_close($ch);
+ return $result;
+}
+
+
+
 
 
 function valid_email($email) 
@@ -74,34 +98,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $policy = test_input($_POST["policy"]);
         $suggestion = test_input($_POST["suggestion"]);
           $i = uniqid();
-            
+
+        $email = 'janaswaram@janasenaparty.org';
         
-        $mail = new PHPMailer;
-        $mail_us = new PHPMailer;
+        $subject = "Janasena Party | Thank you ";
+        $msg = html_entity_decode('<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge" /><style type="text/css"> body, table, td, a{-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;} table, td{mso-table-lspace: 0pt; mso-table-rspace: 0pt;} img{-ms-interpolation-mode: bicubic;} img{border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;} table{border-collapse: collapse !important;} body{height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important;} a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; } @media screen and (max-width: 525px) { .wrapper { width: 100% !important; max-width: 100% !important; } .logo img { margin: 0 auto !important; } .mobile-hide { display: none !important; } .img-max { max-width: 100% !important; width: 100% !important; height: auto !important; } .responsive-table { width: 100% !important; } .padding { padding: 10px 5% 15px 5% !important; } .padding-meta { padding: 30px 5% 0px 5% !important; text-align: center; } .padding-copy { padding: 10px 5% 10px 5% !important; text-align: center; } .no-padding { padding: 0 !important; } .section-padding { padding: 50px 15px 50px 15px !important; } .mobile-button-container { margin: 0 auto; width: 100% !important; } .mobile-button { padding: 15px !important; border: 0 !important; font-size: 16px !important; display: block !important; } } div[style*="margin: 16px 0;"] { margin: 0 !important; }</style></head><body style="margin: 0 !important; padding: 0 !important;"><div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;"> Entice the open with some amazing preheader text. Use a little mystery and get those subscribers to read through...</div><table border="0" cellpadding="0" cellspacing="0" width="100%"> <tr> <td bgcolor="#fff" align="center" style="padding: 70px 15px 70px 15px;" class="section-padding"> <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 500px;" class="responsive-table"> <tr> <td> <table width="100%" border="0" cellspacing="0" cellpadding="0"> <tr> <td class="padding" align="center"> <a target="_blank"><img src="http://janasenaparty.org/janaswaram/video-2.png" width="500" height="400" border="0" alt="Insert alt text here" style="display: block; padding: 0; color: #666666; text-decoration: none; font-family: Helvetica, arial, sans-serif; font-size: 16px;" class="img-max"></a> </td> </tr> <tr> <td align="center"> <table width="100%" border="0" cellspacing="0" cellpadding="0"> <tr> <td align="center" style="padding-top: 25px;" class="padding"> <table border="0" cellspacing="0" cellpadding="0" class="mobile-button-container"> <tr> <td align="center" > <p style="text-align: left; font-size: 0.7rem; font-family: arial; color: #333; padding-left: 40px;">Stay connected to Janasena Party<br><br> Follow us on social media</p> <p style="text-align: left; font-size: 1.0rem; color: white; padding-left: 40px;"><a href="https://www.facebook.com/thejanasenaparty/" target="_blank"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/facebook_online_social_media-128.png" width="40px"></a><a href="https://m.youtube.com/channel/UCrKevLQTcgUp2kZ-WE0pWZQ" target="_blank"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/youtube_online_social_media-128.png" width="40px"></a><a href="https://twitter.com/thejanasena" target="_blank"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/online_social_media_twitter-128.png" width="40px"></a> </p> </td> </tr> </table> </td> </tr> </table> </td> </tr> </table> </td> </tr> </table> </td> </tr></table></body></html>');
         
-        //------sends email to our email with the inforamtion sent by user ---
-      
-        $mail_us->setFrom($email, $name );
-        
-        $mail_us->AddReplyTo( $email, $name );
-        
-        $mail_us->Sender = $email;
-       //$mail_us->addAddress('janaswaram@janasenaparty.org','Janasena Party');
-        $mail_us->addAddress('tagore090574@gmail.com','Janasena Party');
-        
-        $mail_us->Subject = $policy;
-        //$mail_us->Body = html_entity_decode($name."<br>".$email."<br>".$phoneno."<br>".$Profession."<br>".$policy."<br>".$suggestion);
-        $mail_us->Body = html_entity_decode('<html><head></head><body><table cellspacing="10" style="margin: 0 auto;font-family: sans-serif;font-size:16px;"><tr><td><b>Name</b></td><td>:</td><td>'.$name.'</td></tr><tr><td><b>Profession</b></td><td>:</td><td>'.$Profession.'</td></tr><tr><td><b>Email Address</b></td><td>:</td><td>'.$email.'</td></tr><tr><td><b>Mobile No</b></td><td>:</td><td>'.$phoneno.'</td></tr><tr><td><b>Policy Issues</b></td><td>:</td><td>'.$policy.'</td></tr><tr><td><b>Suggestion/Opinion/Idea</b></td><td>:</td><td>'.$suggestion.'</td></tr></table></body></html>');
-        $mail_us->IsHTML(true);
-        
-        //----- Thank you emai sends to user email----
-        $mail->setFrom('janaswaram@janasenaparty.org', 'Janasena Party');
-        $mail->AddReplyTo( $email, $name );
-        $mail->Sender = 'janaswaram@janasenaparty.org';
-        $mail->addAddress($email, $name);
-        $mail->Subject = "Janasena Party | Thank you ";
-        $mail->Body = html_entity_decode('<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge" /><style type="text/css"> body, table, td, a{-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;} table, td{mso-table-lspace: 0pt; mso-table-rspace: 0pt;} img{-ms-interpolation-mode: bicubic;} img{border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;} table{border-collapse: collapse !important;} body{height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important;} a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; } @media screen and (max-width: 525px) { .wrapper { width: 100% !important; max-width: 100% !important; } .logo img { margin: 0 auto !important; } .mobile-hide { display: none !important; } .img-max { max-width: 100% !important; width: 100% !important; height: auto !important; } .responsive-table { width: 100% !important; } .padding { padding: 10px 5% 15px 5% !important; } .padding-meta { padding: 30px 5% 0px 5% !important; text-align: center; } .padding-copy { padding: 10px 5% 10px 5% !important; text-align: center; } .no-padding { padding: 0 !important; } .section-padding { padding: 50px 15px 50px 15px !important; } .mobile-button-container { margin: 0 auto; width: 100% !important; } .mobile-button { padding: 15px !important; border: 0 !important; font-size: 16px !important; display: block !important; } } div[style*="margin: 16px 0;"] { margin: 0 !important; }</style></head><body style="margin: 0 !important; padding: 0 !important;"><div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;"> Entice the open with some amazing preheader text. Use a little mystery and get those subscribers to read through...</div><table border="0" cellpadding="0" cellspacing="0" width="100%"> <tr> <td bgcolor="#fff" align="center" style="padding: 70px 15px 70px 15px;" class="section-padding"> <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 500px;" class="responsive-table"> <tr> <td> <table width="100%" border="0" cellspacing="0" cellpadding="0"> <tr> <td class="padding" align="center"> <a target="_blank"><img src="http://janasenaparty.org/janaswaram/video-2.png" width="500" height="400" border="0" alt="Insert alt text here" style="display: block; padding: 0; color: #666666; text-decoration: none; font-family: Helvetica, arial, sans-serif; font-size: 16px;" class="img-max"></a> </td> </tr> <tr> <td align="center"> <table width="100%" border="0" cellspacing="0" cellpadding="0"> <tr> <td align="center" style="padding-top: 25px;" class="padding"> <table border="0" cellspacing="0" cellpadding="0" class="mobile-button-container"> <tr> <td align="center" > <p style="text-align: left; font-size: 0.7rem; font-family: arial; color: #333; padding-left: 40px;">Stay connected to Janasena Party<br><br> Follow us on social media</p> <p style="text-align: left; font-size: 1.0rem; color: white; padding-left: 40px;"><a href="https://www.facebook.com/thejanasenaparty/" target="_blank"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/facebook_online_social_media-128.png" width="40px"></a><a href="https://m.youtube.com/channel/UCrKevLQTcgUp2kZ-WE0pWZQ" target="_blank"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/youtube_online_social_media-128.png" width="40px"></a><a href="https://twitter.com/thejanasena" target="_blank"><img src="https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/online_social_media_twitter-128.png" width="40px"></a> </p> </td> </tr> </table> </td> </tr> </table> </td> </tr> </table> </td> </tr> </table> </td> </tr></table></body></html>');
-        $mail->IsHTML(true);
+
+
+        $sendemail = send_mail($email,$subject,$msg);
         
         if(!file_exists($_FILES['userfile']['tmp_name']) || !is_uploaded_file($_FILES['userfile']['tmp_name'])) {
             echo 'No upload';
@@ -151,7 +156,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
 
                 
-                $mail_us->addAttachment($uploadfile, $_FILES['userfile']['name']);
+                //$mail_us->addAttachment($uploadfile, $_FILES['userfile']['name']);
               
             }
         }
@@ -192,10 +197,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         
         
-        //$mail->send();
+        //$mail->send()-----;
         //$mail_us->send();
-        
-        if($mail->send() && $mail_us->send()){
+        //echo $sendemail;
+        if($sendemail){
             header('Location: success.php');
             exit;
         }else{
@@ -210,6 +215,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+
+
 <html>
     <head>
        

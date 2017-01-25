@@ -28,30 +28,30 @@ function addOption(elemid, text, value, selected) {
 
 lang_divs ={
     "telugu": [{
-        "top1": "hallo",
-        "top2": "my",
-        "top3": "cef",
+        "top1": "రాజకీయ పార్టీ విధివిధానాల రూపకల్పన ఎవరు చేయాలి ? తలపండిన కొందరు మేధావులా....ప్రజాబాహుళ్యానికి దూరంగా బ్రతికే మరికొందరు బుద్ధిజీవులా ? కాదు , కాకూడదు .",
+        "top2": "జనావాక్యమే జనసేనకు శిరోధార్యం! అందుకే జనసేన తలపెట్టింది ఓ పవిత్రకార్యం ! అదే జనస్వరం !!!!!",
+        "top3": "జనస్వరం, ప్రజల కోసం ప్రజలే విధాన రూపశిల్పులుగా , మార్గనిర్దేశకులుగా అవతరించిన జనవేదిక. రండి .... జనసేన పార్టీ విధివిధానాల రూపకల్పనలో పాలుపంచుకోండి. ఇది మనకోసం మనమే రాసుకుంటున్న పవిత్రగ్రంథం.",
         "preferedlang" : "sdfds : ",
-        "name" : "peru",
-        "profession" : "prof",
-        "email" : "test email",
-        "phoneno" : "mobule no",
-        "policyissue" : "polis",
-        "sugestion" : "corres",
-        "attachements" : "att",
-        "attachements_hint" : "hint"
+        "name" : "పేరు",
+        "profession" : "వృత్తి",
+        "email" : "ఈ-మెయిల్ ",
+        "phoneno" : "ఫోన్ నెంబర్",
+        "policyissue" : "విధి విధానాలు",
+        "sugestion" : "సలహా / అభిప్రాయం / ఆలోచన ",
+        "attachements" : "Attachments",
+        "attachements_hint" : "Please attach supporting documents or videos"
     }],
     "hindi": [{
-        "top1": "hindi",
-        "top2": "hinkj",
-        "top3": "People",
-        "preferedlang" : "language : ",
-        "name" : "kl",
-        "profession" : "Profession",
-        "email" : "Email",
-        "phoneno" : "Phone Number",
-        "policyissue" : "Phone Number",
-        "sugestion" : "Suggestion/Opinion/Idea ",
+        "top1": "जन की बात में आपका स्वागत हैं ! जन की बात नागरिक समाज की आवाज़ हैं - यानी आपकी आवाज़ हैं !",
+        "top2": "'जनस्वर' ऐसा मंच हैं जो सार्वजनिक नीति निर्माण की दिशा में आपको ले जाता हैं !",
+        "top3": "यहाँ पर आपके व्यावहारिक विचार, राय और सुजाव कई मुड्ढे पर आगे बड़ कर दे सकते हैं !",
+        "preferedlang" : "preferred language : ",
+        "name" : "नाम",
+        "profession" : "पेश",
+        "email" : "ई-मेल",
+        "phoneno" : "फ़ोन नंबर",
+        "policyissue" : "नीति मुद्दा",
+        "sugestion" : "सुजाव / राई / विचार",
         "attachements" : "Attachments ",
         "attachements_hint" : "Please attach supporting documents or videos"
     }],
@@ -90,7 +90,7 @@ function scriptChangeCallback(lang, kb, context) {
     //console.log(lang_divs[lang]);
     
     // Change the dropdown to new selected language.
-    document.getElementById('cmdhelp').className = (lang == 'english' ? 'disabled' : '');
+    //document.getElementById('cmdhelp').className = (lang == 'english' ? 'disabled' : '');
 
     var icon = pramukhIME.getIcon(4);
     // PramukhIME toolbar settings
