@@ -14,8 +14,6 @@ function test_input($data) {
 }
 
 
-"-------- send Thankyou email to user --------------"
-
 function send_mail($email,$subject,$msg) {
  $api_key="key-8b9ec8621dc641919463d10a9848c2a9";/* Api Key got from https://mailgun.com/cp/my_account */
  $domain ="janasenaparty.org";/* Domain Name you given to Mailgun */
@@ -215,6 +213,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+
+
 
 
 <html>
